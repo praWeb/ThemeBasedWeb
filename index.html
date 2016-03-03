@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title> Prasanna - Front end developer </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
+
+		<script type="text/javascript" src="node_modules/angular.js"> </script>
+		<script type="text/javascript" src="node_modules/angular-route.js"></script>
+		<script type="text/javascript" src="app.js"> </script>
+		<script type="text/javascript" src="routes.js"> </script>
+		<script type="text/javascript" src="services.js"></script>
+		<script type="text/javascript" src="directives.js"></script>
+		<!-- <script type="text/javascript" src="educationDetails/educationDetails.js"></script> -->
+		<!-- <script type="text/javascript" src="personInfo/basicDetails.js"></script> -->
+ 		<link rel="stylesheet" type="text/css" href="node_modules/bootstrap.min.css"/>
+ 		<link rel="stylesheet/less" type="text/css" href="styles/styles.less"/>
+ 		
+	</head>
+	<body ng-app="PersonProfile">
+	 	<section class="main" ng-class="{'bg-black':pageView=='construction'}">
+	 		<div class="container-fluid p-main">
+	 			<div ng-view> </div>
+	 		</div>
+	 	</section>
+	</body>
+</html>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+

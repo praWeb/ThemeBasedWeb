@@ -1,0 +1,101 @@
+
+
+
+<section ng-controller="GetPersonDetails as pDetails">
+
+	
+
+
+	<section class="p-body row" >
+	<!-- social -links  -->
+		<section class="col-sm-2 hidden-xs">
+			<article class="social-links-container p-card" ng-if="pDetails.pageName!='contact'">
+				<div class="p-card__body">
+					<div class="social-links margin-top-10">
+						<a href="https://www.facebook.com/prasannachowdary.virigineni" target="_"> <img src="images/follow-fb.gif" class="img-responsive center-block"/> </a>
+					</div>
+					
+					<div class="social-links margin-top-10">
+						<a href="https://twitter.com/Prassu_smile" target="_"> <img src="images/twitter-icon.png" class="img-responsive center-block"/> </a>
+					</div>
+
+				    <div class="social-links margin-top-10">
+						<a href="https://uk.linkedin.com/in/prasannaangularjs" target="_"> <img src="images/linkedin.png" class="img-responsive center-block"/> </a>
+					</div>
+					
+					<div class="social-links margin-top-10">
+						<a href="https://www.quora.com/profile/Prasanna-Chowdary" target="_"> <img src="images/Quora.png" class="img-responsive center-block"/> </a>
+					</div>
+
+					<!-- @TODO: have to link to emails -->
+				</div>
+			
+				<div class="p-card__footer link" navigate-to="contact-me">
+					Like to catch me here!!
+				</div>
+			</article>
+		</section>
+		
+		<section class="page-container col-sm-8 col-xs-12">
+			<section class="p-body__header text-center">
+				<h3 class="clear-margin p-body__header__content"> Prasanna - Front end developer</h3>
+			</section>
+			<section class="p-body__introduction media col-sm-offset-1">
+				<div class="media-left">
+					<a href="#">
+						<img src="images/profile.png" alt="prassu" class="media-object"/>
+					</a>
+				</div>
+				<div class="media-body">
+					I am a front end developer. I am a front end developer. I am a front end developer. I am a front end developer. I am a front end developer. I am a front end developer. I am a front end developer.I am a front end developer. I am a front end developer.
+				</div>
+			</section>
+			<hr class="p-divider"/>
+			<section class="row p-body__menu text-center btn-group" role="group">
+				<div class="col-xs-6 p-button-navigation p-button--s btn btn-primary" navigate-to="profile">
+					Profile
+				</div>
+				<div class="col-xs-6 p-button-navigation p-button--s btn btn-success" navigate-to="portfolio">
+					Portfolio
+				</div>
+				<!-- <div class="col-xs-4 p-button-navigation p-button--s btn btn-info" navigate-to="contact-me">
+					Contact Me
+				</div> -->
+			</section>
+			<section class="row">
+				<div class="col-xs-12" id="profile">
+					<div ng-include="'profile.html'"></div>
+				</div>
+				<div class="col-xs-12" id="portfolio">
+					<div ng-include="'portfolio.html'"></div>
+				</div>
+				<!-- <div class="col-xs-12" id="contact-me">
+					<div  ng-include="'contact.html'"></div>
+				</div> -->
+			</section>
+		</section>
+		<section class="col-sm-2 col-xs-12">
+			<section class="p-card margin-top-10 position-fixed">
+				<section class="p-card__header">
+					Got bored by colors!!!
+				</section>
+				<section class="p-card__body">
+					It is understable that you might got bored by visiting here and see the same color. Change it to the color you want, from the options available
+				</section>
+				<section class="p-card__footer">
+					choose color:
+					<select>
+						<option ng-repeat="color in pDetails.theme.colors" ng-style="{'background-color':color}" ng-click="pDetails.alterTheme(color)">{{::color}}</option>
+					</select>
+				</section>
+			</section>
+
+		</section>
+	</section>
+		<article class="p-footer">
+		All rights @Prasanna 
+		</article>
+	</section>
+</section>
+
+

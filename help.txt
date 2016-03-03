@@ -1,0 +1,134 @@
+## This folder contains angular-1 setup end to end
+
+Step1 : create index.html
+Step2 : check if node is already created in the system. If not install node
+        To check if node is installed or not. ->npm -v -> gives version of npm
+Step3 : install angular -> npm install angular -> installs latest angular stable version
+Step4 : link the angular file in the index.html
+		angular.js -> will be helpful while verifying the errors, but the file will be of higher size
+		angular.min.js -> is a minified version, but it is difficult to interpret the errors in the 
+
+
+		install bootstrap
+		 ->npm install bootstrap
+
+		 install angular-route
+		 -> npm install angular-route
+
+		 install karma
+
+		 -> npm install karma
+		 npm install karma-mocha
+		 npm install karma-phantomjs-launcher
+		 npm install karma-chai
+
+		 To run karma from command line easily, install karma-cli
+
+		 -> npm install -g karma-cli
+		 
+
+		 -------------------------------------------------------------------------------
+
+
+		 start configuring karma
+
+		 Karma needs a configuration file. Generate it using karma init and answer the questions. For this demo all of my code is going to live in ./source-and-tests. If I were using a Gulp build chain this would probably need to be tweaked.
+
+		Which testing framework do you want to use ?
+		    mocha
+		Do you want to use Require.js ?
+		    no
+		Do you want to capture any browsers automatically ?
+		    PhantomJS
+		What is the location of your source and test files ?
+		    source-and-tests/**/*.js
+		Should any of the files included by the previous patterns be excluded ?
+		    leave blank
+		Do you want Karma to watch all the files and run the tests on change ?
+		    yes 
+
+
+
+
+		--------------------------------------------
+
+
+		To copy the output of karma into a file
+
+		-->karma start >> C:\filename.txt -t
+
+
+
+
+
+
+
+################################# Back end configurations ###################################
+
+
+
+For backend we need eclipse, apache tomact server, maven
+
+
+Install eclipse, java.. and ensure that all the OS, Java, Eclipse are of same bit...
+
+-->eclipse folder should be having jre folder inside it..
+
+--> Set system variable PATH to jdk version 
+
+Run eclipse
+
+
+--------------------Project creation-----------------
+
+
+New -> dynmiac web application project
+
+-> Enter project name
+
+-> configure tomcat server
+
+save the project
+
+
+
+Project resources will be org.com.PersonProfile format.. so create folders accordingly in "java resources"
+
+-> Generate deployment descriptor
+
+--------------------------------------------------------
+
+Now we need to map the required basic libraries / jar files to the project..
+
+This can be done either by directly physically locating those jar files in the libraries folder of the project or by using maven plugin.. Here now we are using maven , which acutally helps alot in the heavy project development and maintainence
+
+
+install m2e-maven dependency plugin .. which automatically checks for the dependecies and resolv them by installing/updating if required
+
+Once plugin has been installed . then 
+
+->right click on project -> configure as -> convert into a maven project.
+
+
+----------------------Converting into a maven project ------------------------------
+
+What is groupId in maven ?
+groupId identifies a particular project uniquely across all projects, so we should follow an naming convention. A very simple and commonly used way of doing this is to use reverse of your domain, i.e. com.beingjavaguys.maven.
+
+A good way of maintaining the integrity of groupId is to use the project structure. In case the project is consists of multiple modules than every module should append an identifier to the parent groupId. i.e. com.beingjavaguys.maven, com.beingjavaguys.spring, com.beingjavaguys.struts .. etc.
+
+
+What is artifactId in maven ?
+artifactId is the name of war file without version, if you are creating it by yourself you are free to took any name of your choice in lower case and without any strange symbol. But if this is a third party jar than we have to take the name of jar as suggested by it’s distribution.
+
+
+What is archetype in maven ?
+Archetype is a Maven project templating toolkit which tells the maven the type of project we are going to create. Archetype enables the maven to create a template project of user’s choice so that the user can get the project up and running instantly.
+
+“archetype:generate”  generates a new project from provided archetype or update the actual project if using a partial archetype. Maven provides a number of predefined archtypes, see more details from Maven Documentation.
+
+
+What is archetypeArtifactId in maven ?
+While creating a new project we provide the archetypeArtifactId that informs maven about what archetype to use to create the initial structure of the project. Maven looks it up from the archetypeCatalog and works accordingly. eg. if we want to create a simple web-app project we specify -DarchetypeArtifactId=maven-archetype-webapp.
+
+

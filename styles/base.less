@@ -1,0 +1,104 @@
+@import "variables.less";
+@import "helpers.less";
+
+/*
+This stylesheet contains the base styles of the whole website
+This site is mainly theme based.
+All the styles are prefixed by 'p-' which means 'Prasanna'
+*/
+
+.p-main{
+	background:@base-color url('/images/background/Nature-greenery-forest.jpg') no-repeat right fixed;
+}
+
+.p-footer{
+	background-color: @base-footer-color;
+	bottom: 0;
+	width:100%;
+	color: hsl(@base-color-hue,0.2,0.9);
+}
+
+.p-divider{
+	border-color: @base-body-color;
+}
+
+.p-body{
+	background-color: @base-color;
+	opacity: 0.9;
+	.p-body__header{
+		background-color: @base-body-color;
+		color: hsl(@base-color-hue, 0.2,0.7);
+		.p-body__header__content{
+			.font-size(32px);
+			.font-family(@base-main-header-family);
+			.padding-top(20px);
+			.padding-bottom(20px);
+		}
+	}
+	.p-body__introduction{
+		color: hsl(@base-color-hue, 0.3,0.8);
+	}
+
+	.p-body__menu{
+		display: block;
+	}
+}
+
+/*basic card design..
+Card here we design is expecting to have any of these or all the parts.
+Header, Body, Footer
+*/
+.p-card{
+	border:1px solid hsl(@base-color-hue, 0.2, 0.2);
+	.border-radius(4px);
+	color: hsl(@base-color-hue,0.2,0.9);
+	
+		
+	.p-card__header{
+		background-color: @base-header-color;
+	}
+
+	.p-card__body{
+		.padding(10px 2px 10px 2px);
+		background-color: hsla(@base-color-hue, 0.3, 0.3, 0.9);
+		border-bottom:1px solid hsl(@base-color-hue, 0.2, 0.2);
+	}
+
+	.p-card__footer{
+		background-color: hsl(hue(@base-footer-color),0.5,0.5);
+		color: hsl(@base-color-hue,0.2,0.9);
+		a{
+			color: hsl(@base-color-hue,0.2,0.9);
+		}
+	}
+}
+
+/*Button designs*/
+
+.p-button--xs{
+	.button-size(16px);
+}
+.p-button--s{
+	.button-size(32px);
+}
+.p-button--l{
+	.button-size(64px);
+}
+.p-button--xl{
+	.button-size(128px);
+}
+.p-button--xxl{
+	.button-size(256px);
+}
+
+
+
+.p-button-navigation{
+	background-image: svg-gradient(to right, @base-body-color, hsla(@base-color-hue, 25%, 25%, 25%) 1, hsla(@base-color-hue, 50%, 50%, 50%));
+	color: hsla(@base-color-hue, 0.5,0.9, 0.7);
+	border-color: hsl(@base-color-hue, 0.2, 0.8);
+	.border-radius(5px);
+}
+
+
+
