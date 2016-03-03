@@ -84,8 +84,8 @@
 				</section>
 				<section class="p-card__footer">
 					choose color:
-					<select>
-						<option ng-repeat="color in pDetails.theme.colors" ng-style="{'background-color':color}" ng-click="pDetails.alterTheme(color)">{{::color}}</option>
+					<select ng-model="pDetails.themeColor" ng-change="pDetails.alterTheme(color)">
+						<option ng-repeat="color in pDetails.theme.colors" ng-style="{'background-color':color}" >{{::color}}</option>
 					</select>
 				</section>
 			</section>

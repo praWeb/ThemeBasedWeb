@@ -6,6 +6,7 @@ app.controller('GetPersonDetails',["BasicInformation","$routeParams",function(Ba
 	var self= this;
 
 	self.personsData = BasicInformation.data;
+
 	/*possible values: under-construction, profile, portfolio, templates, contact*/
 	self.pageName = $routeParams.pageName || 'home';
 	self.getData = function(){
@@ -16,17 +17,14 @@ app.controller('GetPersonDetails',["BasicInformation","$routeParams",function(Ba
 	self.theme={
 		"colors":['#52A0BA','#798c66','#8C4A34','#76348C']
 	}
-
-	self.alterTheme = function(color){
-		/*798C66,*/
+	self.themeColor = self.theme.colors[0];
+	self.alterTheme = function(){
 		less.modifyVars({
-			'@base-color' : color
+			'@base-color' : self.themeColor
 		});
-		
+		less.refreshStyles();
 	}
 
-	
-	console.debug(self.pageView);
 	return self;
 	
 }]);
